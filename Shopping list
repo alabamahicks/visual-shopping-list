@@ -1,0 +1,28 @@
+Shopping list
+
+None of these in $( document).ready
+
+ADD ONE(one)
+read: Target input. action innerHTML
+check: if innerHTML.value isValid
+save: Target innerHTML. save value
+	SAVE
+	Target li. action innerHTML(saved value)
+
+SELECT ONE(one)
+check: if item is selectedByUser ??could
+Target li. css(add class .checked) --> define .checked in .css
+
+DELETE ONE(one)
+check: if item is chosenToBeDeleted !!must
+Target entireLi.checked. action removeLi
+
+DELETE ALL()
+Target ul>* .action removeLi
+
+REORDER(selected)
+(limited time: 1-2hrs)
+click/drag/release
+onRelease: arrayReorder
+
+	onMouseover: check current position
