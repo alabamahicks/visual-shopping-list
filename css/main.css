@@ -1,6 +1,6 @@
 /* size and positioning */
 body{
-	overflow: hidden;
+	overflow: auto;
 }
 header.delete-all{
   position: fixed;
@@ -20,28 +20,33 @@ section.card{
   padding: 1em;
   border-style: solid;
   border-width: 1px;
-  overflow-y: scroll; /*not working*/
 }
-.card > ul{
+.wrapper {
+	margin: 0 3em;
+	border: 1px solid chocolate;
+	display: flex;
+	text-align: center;
+}
+.wrapper> ul{
+	text-align: center;
 	margin: 0 auto;
 	-webkit-padding-start: 0;
 }
-.card > ul > li{
+.wrapper > ul > li{
 	height: 150px;
 	width: 150px;
-	margin: 20px auto;
+	float: left;
+	margin: 20px;
 	border-style: solid;
 	border-width: 4px;
 	border-radius: 8px;
 	list-style-type: none;
+	display: inline-block;
 }
-.card > ul > li{
+.wrapper > ul > li{
 	text-align: center;
 }
-.add-item{
-	height: 100px;
-	width: 100px;
-	margin: 0 auto;
+.wrapper > ul > li:last-child{
 	border-style: dashed;
 	border-width: 2px;
 }
