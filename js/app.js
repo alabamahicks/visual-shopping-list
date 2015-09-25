@@ -1,27 +1,24 @@
 $( document ).ready(function() {
 
-	$( 'li' ).click(function( event ) {
+	$( document ).on('click', 'li.addedItem', function( event ) {
 		console.log(event);
-		// ADD ONE
-		if (event.target.id === 'addItem'){
-			console.log('addItem clicked');
-			addOne();
-		} else {
 		// SELECT ONE
-			console.log('list item clicked');
-		}
+		console.log('list item clicked'); //WORKS
+		//CHANGE COLOR CLASS
 	});
 
+	$( '#addItem').click(function( event ) {
+		addOne();
+	});
 
 	$( 'header.delete-all').click(function(){
 		// CLEAR ALL
 		console.log('clear all');
-	})
+	});
 
 });
 
 function addOne () {
 	var liTitle = "added Item";
-	//$('section.wrapper.ul.li:nth-last-child(2)').append('<li> + liTitle + </li>');
-	$("<li>" + liTitle + "</li>").insertBefore("#addItem");
+	$('<li class="addedItem">' + '<p>' + liTitle + '</p>' + '</li>').insertBefore("#addItem");
 }
