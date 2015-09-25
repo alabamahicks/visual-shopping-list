@@ -4,16 +4,17 @@ $( document ).ready(function() {
 		console.log(event);
 		// SELECT ONE
 		console.log('list item clicked'); //WORKS
-		//CHANGE COLOR CLASS
+		//CHECK COLOR
+		// CHANGE COLOR CLASS
 	});
 
-	$( '#addItem').click(function( event ) {
+	$( '#addItem').click(function() {
 		addOne();
 	});
 
 	$( 'header.delete-all').click(function(){
-		// CLEAR ALL
 		console.log('clear all');
+		clearAll();
 	});
 
 });
@@ -21,4 +22,8 @@ $( document ).ready(function() {
 function addOne () {
 	var liTitle = "added Item";
 	$('<li class="addedItem">' + '<p>' + liTitle + '</p>' + '</li>').insertBefore("#addItem");
+}
+
+function clearAll() {
+	$('#list li:not(:last)').remove();
 }
