@@ -1,11 +1,23 @@
 $( document ).ready(function() {
 
-	$( document ).on('click', 'li.addedItem', function( event ) {
-		console.log(event);
+	//$( document ).on('click', 'li.addedItem', function( event ) {
+	//	console.log(event);
+	//	// SELECT ONE
+	//	selectOne();
+    //
+	//});
+
+	$("li.addedItem").each(function () {
 		// SELECT ONE
-		console.log('list item clicked'); //WORKS
-		//CHECK COLOR
-		// CHANGE COLOR CLASS
+		$(this).click(function (e) {
+			//if classlist contains checked, remove it
+			if($(e.target).hasClass("checked")){
+				$(e.target).removeClass("checked");
+			} else {
+				//else add it
+				$(e.target).addClass("checked");
+			}
+		});
 	});
 
 	$( '#addItem').click(function() {
@@ -27,3 +39,12 @@ function addOne () {
 function clearAll() {
 	$('#list li:not(:last)').remove();
 }
+
+
+
+
+
+
+	//CHECK COLOR
+	// CHANGE COLOR CLASS
+
