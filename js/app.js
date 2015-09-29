@@ -7,15 +7,19 @@ $( document ).ready(function() {
     //
 	//});
 
-	$("li.addedItem").each(function () {
+	//only original items
+	//$("li.addedItem").each(function () {
+
+	$( document).on('click', 'li.addedItem'.each, function(){
 		// SELECT ONE
 		$(this).click(function (e) {
 			//if classlist contains checked, remove it
-			if($(e.target).hasClass("checked")){
-				$(e.target).removeClass("checked");
+			//if any item on this document hasClass("checked")
+			if($(e.target).hasClass("selected")){
+				$(e.target).removeClass("selected");
 			} else {
 				//else add it
-				$(e.target).addClass("checked");
+				$(e.target).addClass("selected");
 			}
 		});
 	});
@@ -40,11 +44,12 @@ function clearAll() {
 	$('#list li:not(:last)').remove();
 }
 
+function deleteOne() {
+	//if there's an #list li.addedItem anywhere with "selected", remove it
+}
 
 
 
 
 
-	//CHECK COLOR
-	// CHANGE COLOR CLASS
 

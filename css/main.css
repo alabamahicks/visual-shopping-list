@@ -88,8 +88,11 @@ section.card{
 	background-color: white;
 	border-color: #d4d4d4;
 }
-.checked{
+.selected {
 	background-color: yellow;
+}
+.checked {
+	border-color: #d4d4d4;;
 }
 .add-item{
 	color: black;
