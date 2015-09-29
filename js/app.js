@@ -11,10 +11,9 @@ $( document ).ready(function() {
 	//$("li.addedItem").each(function () {
 
 	$( document).on('click', 'li.addedItem'.each, function(){
-		// SELECT ONE
+		// SELECT ONE - TODO: Bug - requires two clicks, and clicking twice on .addItem selects it
 		$(this).click(function (e) {
-			//if classlist contains checked, remove it
-			//if any item on this document hasClass("checked")
+			//TOGGLES SELECT - TODO: limit to one in document
 			if($(e.target).hasClass("selected")){
 				$(e.target).removeClass("selected");
 			} else {
@@ -35,6 +34,14 @@ $( document ).ready(function() {
 
 });
 
+//DELETE ONE
+$( document ).keydown(function( event ){
+	if (event.which == 46 || event.which == 8){
+		//find a selected li, pass to deleteOne( selectedItem )
+		$('#list li.selected').remove();
+	}
+});
+
 function addOne () {
 	var liTitle = "added Item";
 	$('<li class="addedItem">' + '<p>' + liTitle + '</p>' + '</li>').insertBefore("#addItem");
@@ -44,9 +51,6 @@ function clearAll() {
 	$('#list li:not(:last)').remove();
 }
 
-function deleteOne() {
-	//if there's an #list li.addedItem anywhere with "selected", remove it
-}
 
 
 
