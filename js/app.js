@@ -1,5 +1,4 @@
 //TODO: add text entry box
-//TODO: hook up delete-one box
 
 $( document ).ready(function() {
 
@@ -7,23 +6,28 @@ $( document ).ready(function() {
 	//	console.log(event);
 	//	// SELECT ONE
 	//	selectOne();
-    //
+	//
 	//});
 
 	//only original items
 	//$("li.addedItem").each(function () {
 
 	// CHECK ONE - TODO: Bug - requires two clicks, and clicking twice on .addItem selects it
-	$( document).on('click', 'li.addedItem'.each, function(){
+	$(document).on('click', 'li.addedItem'.each, function () {
 		$(this).click(function (e) {
 			//TOGGLES SELECT
-			if($(e.target).hasClass("checked")){
+			if ($(e.target).hasClass("checked")) {
 				$(e.target).removeClass("checked");
 			} else {
 				//else add it
 				$(e.target).addClass("checked");
 			}
 		});
+	});
+
+	$( document ).on('click', 'div.delete-one', function( event ) {
+		// DELETE ONE - remove parent of div...
+		$(this).closest('.added-item').remove();
 	});
 
 	$( '#addItem').click(function() {
@@ -35,14 +39,6 @@ $( document ).ready(function() {
 		clearAll();
 	});
 
-});
-
-//DELETE ONE
-$( document ).keydown(function( event ){
-	if (event.which == 46 || event.which == 8){
-		//find a selected li, pass to deleteOne( selectedItem )
-		$('#list li.selected').remove();
-	}
 });
 
 //ADD ONE
@@ -58,6 +54,14 @@ function clearAll() {
 
 
 
+//STOPPED USING STOPPED USING STOPPED USING STOPPED USING
+//DELETE ONE
+$( document ).keydown(function( event ){
+	if (event.which == 46 || event.which == 8){
+		//find a selected li, pass to deleteOne( selectedItem )
+		$('#list li.selected').remove();
+	}
+});
 
 
 

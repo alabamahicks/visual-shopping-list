@@ -58,12 +58,15 @@ section.card{
 .delete-one{
 	width: 30px;
 	height: 30px;
-	border-radius: 50%;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 50%;
 	top: 0;
 	right: 0;
 	position: absolute;
-	margin-top: -4px;
-	margin-right: -4px;
+	margin-top: 0;
+	margin-right: 0;
 }
 
 .entry-box{
@@ -110,7 +113,8 @@ section.card{
 	border-color: #d4d4d4;;
 }
 .delete-one{
-	background-color: rgba(106,106,106,0.5);
+	/*background-color: rgba(106,106,106,0.5);*/
+	background-color: #d4d4d4;
 	color: white;
 }
 .add-item{
