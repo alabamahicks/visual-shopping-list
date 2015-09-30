@@ -42,9 +42,11 @@ section.card{
 	border-radius: 8px;
 	list-style-type: none;
 	display: inline-block;
+	position: relative;
 }
 .wrapper > ul > li{
 	text-align: center;
+	vertical-align: top;
 }
 .wrapper > ul > li:last-child{
 	border-style: dashed;
@@ -52,6 +54,16 @@ section.card{
 }
 .added-item{
 
+}
+.delete-one{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	top: 0;
+	right: 0;
+	position: absolute;
+	margin-top: -4px;
+	margin-right: -4px;
 }
 
 .entry-box{
@@ -69,6 +81,9 @@ section.card{
 	text-align: center;
 	-webkit-margin-before: 0.5em;
     -webkit-margin-after: 0.5em;
+}
+.delete-one{
+	font-size: 1.5em;
 }
 .plus{
 	text-align: center;
@@ -93,6 +108,10 @@ section.card{
 }
 .checked {
 	border-color: #d4d4d4;;
+}
+.delete-one{
+	background-color: rgba(106,106,106,0.5);
+	color: white;
 }
 .add-item{
 	color: black;

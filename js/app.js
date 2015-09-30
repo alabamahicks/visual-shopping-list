@@ -1,5 +1,5 @@
 //TODO: add text entry box
-//TODO: add delete-one box
+//TODO: hook up delete-one box
 
 $( document ).ready(function() {
 
@@ -48,7 +48,7 @@ $( document ).keydown(function( event ){
 //ADD ONE
 function addOne () {
 	var liTitle = "added Item";
-	$('<li class="added-item">' + '<p>' + liTitle + '</p>' + '</li>').insertBefore("#addItem");
+	$('<li class="added-item">' + '<p>' + liTitle + '</p>' + '<div class="delete-one">-</div>'+ '</li>').insertBefore("#addItem");
 }
 
 //CLEAR ALL
