@@ -69,7 +69,8 @@ section.card{
 	margin-right: 0;
 }
 
-.entry-box{
+input.entry-box{
+	display: none;
 
 }
 /****************************************** wider screens *********************************************/

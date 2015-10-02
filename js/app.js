@@ -1,4 +1,10 @@
-//TODO: add text entry box
+//TODO: bug: after clear all, can't add more items
+//TODO: locate entry box in card
+//TODO: add themeing
+//TODO: R2add images
+//TODO: R2add dragging
+//TODO: R2add reorder
+//TODO: R3add local offline storage
 
 $( document ).ready(function() {
 
@@ -15,7 +21,7 @@ $( document ).ready(function() {
 	// CHECK ONE - TODO: Bug - requires two clicks, and clicking twice on .addItem selects it
 	$(document).on('click', 'li.addedItem'.each, function () {
 		$(this).click(function (e) {
-			//TOGGLES SELECT
+			//TOGGLES CHECKED
 			if ($(e.target).hasClass("checked")) {
 				$(e.target).removeClass("checked");
 			} else {
@@ -31,7 +37,10 @@ $( document ).ready(function() {
 	});
 
 	$( '#addItem').click(function() {
-		addOne();
+		//SHOW ENTRY
+		$('.entry-box').show();
+
+
 	});
 
 	$( 'header.delete-all').click(function(){
@@ -41,9 +50,16 @@ $( document ).ready(function() {
 
 });
 
+//UPON ENTER (13)
+$( document ).keydown(function( event ){
+	if (event.which == 13 ){
+		addOne($('input.entry-box').val());
+	}
+});
+
 //ADD ONE
-function addOne () {
-	var liTitle = "added Item";
+function addOne (enteredString) {
+	var liTitle = enteredString;
 	$('<li class="added-item">' + '<p>' + liTitle + '</p>' + '<div class="delete-one">-</div>'+ '</li>').insertBefore("#addItem");
 }
 
