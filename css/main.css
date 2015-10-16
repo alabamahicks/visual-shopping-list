@@ -22,33 +22,37 @@ section.card{
   border-width: 1px;
 }
 .wrapper {
-	margin: 0 3em;
+	margin-left:auto;
+	margin-right: auto;
 	border: 1px solid chocolate;
 	display: flex;
 	justify-content: space-around;
+	width: 100%;
 }
-.wrapper> ul{
+.wrapper ul{
 	text-align: center;
 	margin: 0 auto;
 	-webkit-padding-start: 0;
+	width:100%;
 }
-.wrapper > ul > li{
+/* TODO: add media queries varying width % to stack 1, 2, 3, 4 across */
+.wrapper ul li {
 	height: 150px;
-	width: 150px;
+	width: 40%;
 	float: left;
-	margin: 20px;
+	margin: 4%;
 	border-style: solid;
-	border-width: 4px;
+	border-width: 1px;
 	border-radius: 8px;
 	list-style-type: none;
 	display: inline-block;
 	position: relative;
 }
-.wrapper > ul > li{
+.wrapper ul li{
 	text-align: center;
 	vertical-align: top;
 }
-.wrapper > ul > li:last-child{
+.wrapper ul li:last-child{
 	border-style: dashed;
 	border-width: 2px;
 }
@@ -74,11 +78,69 @@ input.entry-box{
 
 }
 /****************************************** wider screens *********************************************/
+@media (min-width: 320px) {
+	.wrapper ul li {
+		width: 80%;
+		margin: 4%;
+	}
+}
 
+@media (min-width: 400px) {
+	.wrapper ul li {
+		width: 50%;
+		margin: 4%;
+	}
+}
+
+@media (min-width: 500px){
+	.wrapper ul li {
+		width: 39%;
+		margin: 2%;
+	}
+}
+
+@media (min-width: 600px){
+	.wrapper ul li {
+		width: 30%;
+		margin: 2%;
+	}
+}
+
+@media (min-width: 700px){
+	.wrapper ul li {
+		width: 28%;
+		margin: 2%;
+	}
+}
+
+@media (min-width: 800px){
+	.wrapper ul li {
+		width: 23%;
+		margin: 2%;
+	}
+}
+@media (min-width: 900px){
+	.wrapper ul li {
+		width: 18%;
+		margin: 2%;
+	}
+}
+@media (min-width: 1000px){
+	.wrapper ul li {
+		width: 15%;
+		margin: 2%;
+	}
+}
+@media (min-width: 1100px){
+	.wrapper ul li {
+		width: 15%;
+		margin: 2%;
+	}
+}
 
 
 /****************************************** typography *********************************************/
-.delete-all > h3{
+.delete-all h3{
 	font-family: sans-serif;
 	font-size: 1.5em;
 	font-weight: lighter;

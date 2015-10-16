@@ -19,8 +19,8 @@ $( document ).ready(function() {
 	//$("li.addedItem").each(function () {
 
 	// CHECK ONE - TODO: Bug - requires two clicks, and clicking twice on .addItem selects it
-	$(document).on('click', 'li.addedItem'.each, function () {
-		$(this).click(function (e) {
+	$(document).on('click', 'li.addedItem'.each, function (e) {
+		//$(this).click(function (e) {
 			//TOGGLES CHECKED
 			if ($(e.target).hasClass("checked")) {
 				$(e.target).removeClass("checked");
@@ -28,7 +28,7 @@ $( document ).ready(function() {
 				//else add it
 				$(e.target).addClass("checked");
 			}
-		});
+		//});
 	});
 
 	$( document ).on('click', 'div.delete-one', function( event ) {
